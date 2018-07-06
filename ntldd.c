@@ -30,7 +30,7 @@ MSDN Magazine articles
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <direct.h>  
+#include <direct.h>
 #include <assert.h>
 #include <libgen.h>
 
@@ -63,14 +63,14 @@ For bug reporting instructions, please see:\n\
 }
 
 //when the absolute path (actual file system location)
-char *GetFullPath( char * partialPath )  
-{  
+char *GetFullPath( char * partialPath )
+{
    char full[_MAX_PATH];
-   if( _fullpath( full, partialPath, _MAX_PATH ) != NULL )  
+   if( _fullpath( full, partialPath, _MAX_PATH ) != NULL )
       return _fullpath( full, partialPath, _MAX_PATH );
-   else  
-      return NULL; 
-}  
+   else
+      return NULL;
+}
 
 char* concat(const char *s1, const char *s2)
 {
@@ -150,8 +150,8 @@ int PrintImageLinks (int first, int verbose, int unused, int datarelocs, int fun
     }
     return 0;
   }
-  
-  if (self->flags & DEPTREE_UNRESOLVED)  
+
+  if (self->flags & DEPTREE_UNRESOLVED)
   {
     //if (!first)
       //printf (" => not found\n");
@@ -159,42 +159,42 @@ int PrintImageLinks (int first, int verbose, int unused, int datarelocs, int fun
       //fprintf (stderr, "%s: not found\n", self->module);
     unresolved = 1;
   }
-  
+
   char *dirc, *basec, *bname, *dname, *path;
-  
+
   if (!unresolved && !first && copy_depend == 0)
   {
 		  //Print Only.
 		  if (stricmp (self->module, self->resolved_module) == 0)
 		  {
 			printf (" (0x%p)\n", self->mapped_address);
-		  } 
-		  else 
+		  }
+		  else
 		  {
-			printf ("%s\n", self->resolved_module);	
-		  } 
+			printf ("%s\n", self->resolved_module);
+		  }
   }
   //Copy file dependencies
   else if (!unresolved && !first && copy_depend == 1)
   {
 	  if (stricmp (self->module, self->resolved_module) == 0)
-		  {					
+		  {
 				path = self->mapped_address;
 				basec = strdup(path);
 				bname = basename(basec);
 				char* ts1 = strdup(bin);
 				char* dir = dirname(ts1);
 				char* sNewFileName = concat(dir,concat("\\",bname));
-				
+
 				char *haystack = self->mapped_address;
 				char word[20] = "\\Windows\\SYSTEM";
 				char *token = strstr(haystack, word);
-				if (token == NULL)				
+				if (token == NULL)
 				{
 					if (CopyFile((_T(self->mapped_address)),(_T(sNewFileName)),0))
 						printf("%s\t\t[Copied]\n",self->mapped_address);
 				}
-		  } else 
+		  } else
 		  {
 				path = self->resolved_module;
 				basec = strdup(path);
@@ -202,14 +202,14 @@ int PrintImageLinks (int first, int verbose, int unused, int datarelocs, int fun
 				char* ts1 = strdup(bin);
 				char* dir = dirname(ts1);
 				char* sNewFileName = concat(dir,concat("\\",bname));
-				
+
 				char *haystack = self->resolved_module;
 				char word[20] = "\\Windows\\SYSTEM";
 				char *token = strstr(haystack, word);
 				if (token == NULL)
 				{
 					if (CopyFile((_T(self->resolved_module)),(_T(sNewFileName)),0))
-						printf("%s\t\t[Copied]\n",self->resolved_module);				
+						printf("%s\t\t[Copied]\n",self->resolved_module);
 				}
 		  }
   }
@@ -265,7 +265,7 @@ int main (int argc, char **argv)
   SearchPaths sp;
   memset(&sp, 0, sizeof (sp));
   sp.path = calloc (1, sizeof (char*));
-  
+
   char *bin_path = strdup(argv[2]);
 
   for (i = 1; i < argc; i++)
@@ -276,13 +276,13 @@ int main (int argc, char **argv)
       verbose = 1;
     else if (strcmp (argv[i], "-u") == 0 || strcmp (argv[i], "--unused") == 0)
       unused = 1;
-    else if (strcmp (argv[i], "-d") == 0 || 
+    else if (strcmp (argv[i], "-d") == 0 ||
         strcmp (argv[i], "--data-relocs") == 0)
       datarelocs = 1;
-    else if (strcmp (argv[i], "-r") == 0 || 
+    else if (strcmp (argv[i], "-r") == 0 ||
         strcmp (argv[i], "--function-relocs") == 0)
       functionrelocs = 1;
-    else if (strcmp (argv[i], "-R") == 0 || 
+    else if (strcmp (argv[i], "-R") == 0 ||
         strcmp (argv[i], "--recursive") == 0)
       recursive = 1;
     else if (strcmp (argv[i], "-C") == 0 ||
@@ -290,12 +290,12 @@ int main (int argc, char **argv)
 		{
 			copy_depend = 1;
 			recursive = 1;
-		}     
-	  
-    else if (strcmp (argv[i], "-e") == 0 || 
+		}
+
+    else if (strcmp (argv[i], "-e") == 0 ||
         strcmp (argv[i], "--list-exports") == 0)
       list_exports = 1;
-    else if (strcmp (argv[i], "-i") == 0 || 
+    else if (strcmp (argv[i], "-i") == 0 ||
         strcmp (argv[i], "--list-imports") == 0)
       list_imports = 1;
     else if ((strcmp (argv[i], "-D") == 0 || strcmp (argv[i], "--search-dir") == 0) && i < argc - 1)
@@ -309,7 +309,7 @@ int main (int argc, char **argv)
             *sep = '\0';
         sp.count++;
         sp.path = (char**)realloc(sp.path, sp.count * sizeof(char*));
-		
+
         if (!sep)
         {
           char* p = strrchr(add_dirs, '"');
@@ -384,7 +384,7 @@ Try `ntldd --help' for more information\n", argv[i]);
       cfg.machineType = -1;
       cfg.on_self = 0;
       cfg.datarelocs = datarelocs;
-      cfg.recursive = recursive;    
+      cfg.recursive = recursive;
       cfg.functionrelocs = functionrelocs;
       cfg.stack = &stack;
       cfg.stack_len = &stack_len;
