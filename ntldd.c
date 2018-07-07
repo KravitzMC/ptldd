@@ -1,5 +1,5 @@
 /*
-    ntldd - lists dynamic dependencies of a module
+    ptldd - lists dynamic dependencies of a module
 
     Copyright (C) 2010 - 2018 LRN (Modified by NazioByte)
 
@@ -39,7 +39,7 @@ MSDN Magazine articles
 
 void printversion()
 {
-  printf ("\nNTLDD %d.%d (Tool to list dependencies of a DLL)\n\
+  printf ("\PTLDD %d.%d (Tool to list dependencies of a DLL)\n\
 ----------------------------------------------\nCopyright (C) 2010-2018 LRN (Modified by NazioByte)\n\
 This is free software; see the source for conditions. There is NO\n\
 warranty; not event for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n\
