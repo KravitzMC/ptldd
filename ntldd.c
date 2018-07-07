@@ -39,7 +39,7 @@ MSDN Magazine articles
 
 void printversion()
 {
-  printf ("\PTLDD %d.%d (Tool to list dependencies of a DLL)\n\
+  printf ("\nPTLDD %d.%d (Tool to list dependencies of a DLL)\n\
 ----------------------------------------------\nCopyright (C) 2010-2018 LRN (Modified by NazioByte)\n\
 This is free software; see the source for conditions. There is NO\n\
 warranty; not event for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n\
