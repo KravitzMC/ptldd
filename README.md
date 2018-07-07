@@ -1,4 +1,4 @@
-This small utility for track dependencies for Windows EXE and DLL.
+**This small utility for track dependencies for Windows EXE and DLL.**
 
 Description :
  * Can display list dependencies only.
@@ -7,7 +7,7 @@ Description :
         by using : $ ptldd -C [EXECUTABLE PATH]
 
 Require :
-- MSYS2 [GCC, MinGW Packages] (https://www.msys2.org)
+- MSYS2 [GCC, MinGW Packages](https://www.msys2.org)
 - Win32 API
 
 You can Run makeldd.cmd to compile it.
