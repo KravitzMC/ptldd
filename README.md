@@ -1,4 +1,4 @@
-### This small utility for track dependencies for Windows EXE and DLL.
+### Track dependencies for Windows EXE and DLL (ptldd). 
 
 Description :
  * Can display list dependencies only.
