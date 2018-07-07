@@ -1,4 +1,4 @@
-**This small utility for track dependencies for Windows EXE and DLL.**
+### This small utility for track dependencies for Windows EXE and DLL.
 
 Description :
  * Can display list dependencies only.
