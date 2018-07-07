@@ -1,7 +1,7 @@
 /*
     ntldd - lists dynamic dependencies of a module
 
-    Copyright (C) 2010 - 2018 LRN (Modified by DukeBNK48)
+    Copyright (C) 2010 - 2018 LRN (Modified by NazioByte)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ MSDN Magazine articles
 void printversion()
 {
   printf ("\nNTLDD %d.%d (Tool to list dependencies of a DLL)\n\
-----------------------------------------------\nCopyright (C) 2010-2018 LRN (Modified by DukeBNK48)\n\
+----------------------------------------------\nCopyright (C) 2010-2018 LRN (Modified by NazioByte)\n\
 This is free software; see the source for conditions. There is NO\n\
 warranty; not event for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n\
 ", NTLDD_VERSION_MAJOR, NTLDD_VERSION_MINOR);
